@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+
+function Navbar() {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
+    return (
+      <nav className=''>
+        <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
+          <div className='font-bold text-2xl text-white'>
+            <a href='/'>Quicknode</a>
+          </div>
+
+          {/* Dropdown button */}
+          <div className='relative'>
+            <button
+              onClick={toggleDropdown}
+              className='bg-blue-500 text-white px-4 py-2 rounded-md'>
+             Layers
+            </button>
+
+            {/* Dropdown Menu */}
+            {dropdownOpen && (
+              <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
+                <a
+                  href='/orders'
+                  className='block px-4 py-2 text-black hover:bg-gray-200'>
+                Orders
+                </a>
+                <a
+                  href='/neworders'
+                  className='block px-4 py-2 text-black hover:bg-gray-200'>
+               New Orders
+                </a>
+             
+              </div>
+            )}
+          </div>
+        </div>
+        <hr className='border-t-2 border-black' />
+      </nav>
+    );
+}
+
+export default Navbar;
