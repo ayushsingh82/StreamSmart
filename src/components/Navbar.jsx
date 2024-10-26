@@ -36,7 +36,7 @@ function Navbar() {
                Streams
                 </a>
                 <a
-                href='/'
+                href='/odos-pricing-currencies'
                 className='block px-4 py-2 text-black hover:bg-gray-200'>
              Odos
               </a>

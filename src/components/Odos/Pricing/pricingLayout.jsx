@@ -1,9 +1,9 @@
 import React from 'react'
 
-const pricingLayout = () => {
+const PricingLayout = () => {
   return (
-    <div>pricingLayout</div>
+    <div>PricingLayout</div>
   )
 }
 
-export default pricingLayout
+export default PricingLayout
