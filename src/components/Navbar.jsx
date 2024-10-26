@@ -19,22 +19,27 @@ function Navbar() {
             <button
               onClick={toggleDropdown}
               className='bg-blue-500 text-white px-4 py-2 rounded-md'>
-             Layers
+             Get Started
             </button>
 
             {/* Dropdown Menu */}
             {dropdownOpen && (
               <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
                 <a
-                  href='/orders'
+                  href='/'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
-                Orders
+                Functions
                 </a>
                 <a
-                  href='/neworders'
+                  href='/'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
-               New Orders
+               Streams
                 </a>
+                <a
+                href='/'
+                className='block px-4 py-2 text-black hover:bg-gray-200'>
+             Odos
+              </a>
              
               </div>
             )}
