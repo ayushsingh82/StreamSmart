@@ -5,6 +5,7 @@ import './index.css'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
 import PricingCurrencies from './components/Odos/Pricing/PricingCurrencies.jsx'
+import ChainId from './components/Odos/Pricing/ChainId.jsx'
 
 import {
   createBrowserRouter,
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/" element={<Home />} />
       <Route path='/odos-pricing-currencies' element={<PricingCurrencies/>}/>
+      <Route path='/chainId' element={<ChainId/>}/>
     </Route>
   )
 );
