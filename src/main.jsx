@@ -8,6 +8,12 @@ import PricingCurrencies from './components/Odos/Pricing/PricingCurrencies.jsx'
 import ChainId from './components/Odos/Pricing/ChainId.jsx'
 import TokenAddress from './components/Odos/Pricing/TokenAddress.jsx'
 import QuoteV2 from './components/Odos/SmartOrder/QuoteV2.jsx'
+import V2Zap from './components/Odos/SmartOrder/V2Zap.jsx'
+import Assemble from './components/Odos/SmartOrder/Assemble.jsx'
+import BlockMetrix from './components/Functions/BlockMetrix.jsx'
+import WhaleTransaction from './components/Functions/WhaleTransaction.jsx'
+import MultichainTransaction from './components/Functions/MultichainTransaction.jsx'
+import GasPrice from './components/Functions/GasPrice.jsx'
 
 import {
   createBrowserRouter,
@@ -26,6 +32,12 @@ const router = createBrowserRouter(
       <Route path='/chainId' element={<ChainId/>}/>
       <Route path='/token-address' element={<TokenAddress/>}/>
       <Route path='/quoteV2' element={<QuoteV2/>}/>
+      <Route path='/V2zap' element={<V2Zap/>}/>
+      <Route path='/assemble' element={<Assemble/>}/>
+      <Route path='/blockmetrix' element={<BlockMetrix/>}/>
+      <Route path='/gasprice' element={<GasPrice/>}/>
+      <Route path='/multichain-txn' element={<MultichainTransaction/>}/>
+      <Route path='/whale-txn' element={<WhaleTransaction/>}/>
     </Route>
   )
 );
