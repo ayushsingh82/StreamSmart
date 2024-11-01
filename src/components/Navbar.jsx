@@ -26,12 +26,12 @@ function Navbar() {
             {dropdownOpen && (
               <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
                 <a
-                  href='/gasprice'
+                  href='/blockmetrix'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                 Functions
                 </a>
                 <a
-                  href='/'
+                  href='/create-stream'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                Streams
                 </a>
