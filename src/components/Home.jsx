@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import odos from '../../public/odos.png'
 
 const Home = () => {
   return (
@@ -95,9 +96,9 @@ const Home = () => {
         >
           {/* Infinite Y-axis up and down movement for Quicknode Image */}
           <motion.img
-            src="https://www.quicknode.com/static/logo.svg" // Updated Quicknode Logo URL
+            src="../../public/odos.png" // Updated Quicknode Logo URL
             alt="Quicknode Image"
-            className="rounded-lg shadow-lg h-[200px] mb-4" // Added margin-bottom for spacing
+            className="rounded-lg shadow-lg h-[100px] mb-4" // Added margin-bottom for spacing
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
             transition={{ 
               repeat: Infinity,               // Infinite loop
@@ -108,9 +109,9 @@ const Home = () => {
           
           {/* Infinite Y-axis up and down movement for Odos Image */}
           <motion.img
-            src="https://odos.xyz/_next/image?url=%2Fimages%2Fodo%2Flogo.png&w=128&q=75" // Valid Odos logo URL
+            src="../../public/quicknode.png" // Valid Odos logo URL
             alt="Odos Image"
-            className="rounded-lg shadow-lg h-[200px]"
+            className="rounded-lg shadow-lg h-[100px]"
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
             transition={{ 
               repeat: Infinity,               // Infinite loop

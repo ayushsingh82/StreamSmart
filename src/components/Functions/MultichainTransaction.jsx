@@ -1,54 +1,73 @@
 import React, { useState } from 'react';
 
-const MultichainTransaction = () => {
-  const [transactionData, setTransactionData] = useState(null);
+const BlockMetrix = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const fetchTransactionData = async () => {
+  const fetchBlockMetrix = async () => {
+    setLoading(true);
+    setError(null);
+
     try {
-      const response = await fetch(
-        'https://api.quicknode.com/functions/rest/v1/namespaces/0f6812dd-a17f-4cbc-9ab4-7a529eb33940/functions/tx-translate/call?result_only=true',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': 'QN_80e7e07b977a4214ac78d108b61dd0f3', // Replace 'YOUR_API_KEY' with your actual QuickNode API key
-          },
-          body: JSON.stringify({
-            user_data: {
-              vm: 'evm',
-              txhash: '0x1cd4d61b9750632da36980329c240a5d2d2219a8cb3daaaebfaed4ae7b4efa22',
-              apiKey: 'NOVES_API_KEY', // Replace 'NOVES_API_KEY' with the appropriate API key if required
-              chain: 'eth',
-            },
-          }),
-        }
-      );
+      const response = await fetch("https://api.quicknode.com/functions/rest/v1/namespaces/0f6812dd-a17f-4cbc-9ab4-7a529eb33940/functions/block-metrics/call", {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'Content-Type': 'application/json',
+          'x-api-key': 'QN_80e7e07b977a4214ac78d108b61dd0f3', // Your actual API key here
+        },
+        body: JSON.stringify({
+          network: "ethereum-mainnet",
+          dataset: "block",
+          block: "latest",
+        }),
+      });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        const errorText = await response.text();
+        throw new Error(`Network response was not ok: ${errorText}`);
       }
 
-      const data = await response.json();
-      setTransactionData(data);
-      console.log('Transaction Data:', data); // Logs the data for debugging
-    } catch (error) {
-      console.error('Error fetching transaction data:', error);
+      const result = await response.json();
+      setData(result.response?.result); // Adjusted based on API response structure
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setError(err.message || 'Unknown error occurred');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div>
-      <h2>Multichain Transaction</h2>
-      <button onClick={fetchTransactionData} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-        Fetch Transaction Data
-      </button>
-      {transactionData && (
-        <pre className="bg-gray-800 text-white p-4 mt-4 rounded-md">
-          {JSON.stringify(transactionData, null, 2)}
-        </pre>
-      )}
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-700 to-blue-200 text-white">
+      <div className="w-full max-w-xl p-8 bg-gray-900 rounded-lg shadow-xl">
+        <h2 className="text-3xl font-semibold mb-8 text-center">Block Metrics</h2>
+
+        <button
+          onClick={fetchBlockMetrix}
+          disabled={loading}
+          className="bg-blue-600 w-full text-white p-3 rounded-md hover:bg-blue-700 transition duration-200"
+        >
+          {loading ? 'Fetching...' : 'Get Block Metrics'}
+        </button>
+
+        {error && (
+          <div className="mt-8 p-4 bg-red-700 border border-red-600 rounded-md w-full">
+            <h3 className="text-md font-semibold mb-2">Error:</h3>
+            <p>{error}</p>
+          </div>
+        )}
+
+        {data && (
+          <div className="mt-8 p-4 bg-gray-800 border border-gray-700 rounded-md max-h-48 overflow-y-auto w-full">
+            <h3 className="text-md font-semibold mb-2">Block Metrics Results:</h3>
+            <pre className="whitespace-pre-wrap text-sm text-gray-300">{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default MultichainTransaction;
+export default BlockMetrix;

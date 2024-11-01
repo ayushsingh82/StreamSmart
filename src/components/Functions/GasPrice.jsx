@@ -33,30 +33,42 @@ const GasPrice = () => {
       }
 
       const result = await response.json();
-      setData(result);
+      setData(result.response?.result); // Adjusted based on API response structure
     } catch (err) {
       console.error('Fetch error:', err);
-      setError(err);
+      setError(err.message || 'Unknown error occurred');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
-      <h1>Gas Price Estimator</h1>
-      <button onClick={fetchGasPrice} disabled={loading}>
-        {loading ? 'Fetching...' : 'Get Gas Price'}
-      </button>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-700 to-blue-200 text-white">
+      <div className="w-full max-w-xl p-8 bg-gray-900 rounded-lg shadow-xl">
+        <h2 className="text-3xl font-semibold mb-8 text-center">Gas Price Estimator</h2>
 
-      {error && <div>Error: {error.message}</div>}
+        <button
+          onClick={fetchGasPrice}
+          disabled={loading}
+          className="bg-blue-600 w-full text-white p-3 rounded-md hover:bg-blue-700 transition duration-200"
+        >
+          {loading ? 'Fetching...' : 'Get Gas Price'}
+        </button>
 
-      {data && (
-        <div>
-          <h2>Gas Price Results</h2>
-          <pre>{JSON.stringify(data.response.result, null, 2)}</pre>
-        </div>
-      )}
+        {error && (
+          <div className="mt-8 p-4 bg-red-700 border border-red-600 rounded-md w-full">
+            <h3 className="text-md font-semibold mb-2">Error:</h3>
+            <p>{error}</p>
+          </div>
+        )}
+
+        {data && (
+          <div className="mt-8 p-4 bg-gray-800 border border-gray-700 rounded-md max-h-48 overflow-y-auto w-full">
+            <h3 className="text-md font-semibold mb-2">Gas Price Results:</h3>
+            <pre className="whitespace-pre-wrap text-sm text-gray-300">{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
