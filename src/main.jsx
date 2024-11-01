@@ -14,6 +14,7 @@ import BlockMetrix from './components/Functions/BlockMetrix.jsx'
 import WhaleTransaction from './components/Functions/WhaleTransaction.jsx'
 import MultichainTransaction from './components/Functions/MultichainTransaction.jsx'
 import GasPrice from './components/Functions/GasPrice.jsx'
+import OdosLayout from './components/Odos/OdosLayout.jsx'
 
 import {
   createBrowserRouter,
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
       <Route path='/gasprice' element={<GasPrice/>}/>
       <Route path='/multichain-txn' element={<MultichainTransaction/>}/>
       <Route path='/whale-txn' element={<WhaleTransaction/>}/>
+      <Route path='/odos-layout' element={<OdosLayout/>}/>
     </Route>
   )
 );

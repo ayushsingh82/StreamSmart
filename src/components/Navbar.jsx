@@ -26,7 +26,7 @@ function Navbar() {
             {dropdownOpen && (
               <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
                 <a
-                  href='/'
+                  href='/gasprice'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                 Functions
                 </a>
@@ -36,7 +36,7 @@ function Navbar() {
                Streams
                 </a>
                 <a
-                href='/V2zap'
+                href='/odos-layout'
                 className='block px-4 py-2 text-black hover:bg-gray-200'>
              Odos
               </a>
