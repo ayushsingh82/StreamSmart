@@ -55,7 +55,7 @@ const router = createBrowserRouter(
       <Route path='/activate-id' element={<ActivateId/>}/>
       <Route path='/terminate-id' element={<TerminateId/>}/>
       <Route path='/delete-id' element={<DeleteId/>}/>
-      <Route path='/Stream-Layout' element={<StreamLayout/>}/>
+      <Route path='/streamlayout' element={<StreamLayout/>}/>
     </Route>
   )
 );

@@ -10,8 +10,8 @@ function Navbar() {
     return (
       <nav className=''>
         <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
-          <div className='font-bold text-2xl text-white'>
-            <a href='/'>Quicknode</a>
+          <div className='font-semibold text-xl text-white'>
+            <a href='/'>StreamSmart</a>
           </div>
 
           {/* Dropdown button */}
@@ -31,7 +31,7 @@ function Navbar() {
                 Functions
                 </a>
                 <a
-                  href='/Stream-Layout'
+                  href='/streamlayout'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                Streams
                 </a>

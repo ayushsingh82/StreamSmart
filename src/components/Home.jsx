@@ -11,10 +11,10 @@ const Home = () => {
           <div className="md:w-[478px]">
             <div className="tag text-black mt-[100px]">Version 1.0 is here</div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tighter bg-gradient-to-b from-blue-500 via-blue-400 to-blue-600 text-transparent bg-clip-text mt-6">
-              Quicknode function & streams
+            Revolutionizing Tracking for the Next Generation
             </h1>
-            <p className="text-xl text-black tracking-tight mt-6">
-              Simplifying the tracking
+            <p className="text-xl text-black tracking-tight mt-6 font-bold">
+            Unleashing Stream Functions with Odos for Innovation.
             </p>
             <div className="flex gap-3 items-center mt-[30px]">
               <a href="">
@@ -88,24 +88,39 @@ const Home = () => {
 
           {/* Right Section - Animated Image */}
           <motion.div
-            className="md:w-[478px] md:mt-[30px]"
-            initial={{ x: 300, opacity: 0 }}  // Start off-screen to the right
-            animate={{ x: 0, opacity: 1 }}    // Slide in from the right
-            transition={{ delay: 1.2, duration: 0.8, ease: 'easeOut' }} // 2-second delay for initial animation
-          >
-            {/* Infinite Y-axis up and down movement */}
-            <motion.img
-  src="https://www.quicknode.com/static/logo.svg"
-              alt="Quicknode Image"
-              className="rounded-lg shadow-lg h-[200px]"
-              animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
-              transition={{ 
-                repeat: Infinity,               // Infinite loop
-                duration: 3,                    // 2 seconds for the full loop
-                ease: 'easeInOut',              // Smooth easing
-              }}
-            />
-          </motion.div>
+          className="md:w-[478px] md:mt-[30px] flex flex-col items-center" // Flex container for vertical alignment
+          initial={{ x: 300, opacity: 0 }}  // Start off-screen to the right
+          animate={{ x: 0, opacity: 1 }}    // Slide in from the right
+          transition={{ delay: 1.2, duration: 0.8, ease: 'easeOut' }} // 2-second delay for initial animation
+        >
+          {/* Infinite Y-axis up and down movement for Quicknode Image */}
+          <motion.img
+            src="https://www.quicknode.com/static/logo.svg" // Updated Quicknode Logo URL
+            alt="Quicknode Image"
+            className="rounded-lg shadow-lg h-[200px] mb-4" // Added margin-bottom for spacing
+            animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
+            transition={{ 
+              repeat: Infinity,               // Infinite loop
+              duration: 3,                    // 3 seconds for the full loop
+              ease: 'easeInOut',              // Smooth easing
+            }}
+          />
+          
+          {/* Infinite Y-axis up and down movement for Odos Image */}
+          <motion.img
+            src="https://odos.xyz/_next/image?url=%2Fimages%2Fodo%2Flogo.png&w=128&q=75" // Valid Odos logo URL
+            alt="Odos Image"
+            className="rounded-lg shadow-lg h-[200px]"
+            animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
+            transition={{ 
+              repeat: Infinity,               // Infinite loop
+              duration: 3,                    // 3 seconds for the full loop
+              ease: 'easeInOut',              // Smooth easing
+            }}
+          />
+        </motion.div>
+        
+        
 
         </div>
       </div>
