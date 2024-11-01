@@ -23,7 +23,7 @@ const Assemble = () => {
       });
 
       if (!response.ok) {
-        const errorText = await response.text(); // Get error text from response
+        const errorText = await response.text();
         throw new Error(`Network response was not ok: ${errorText}`);
       }
 
@@ -38,20 +38,33 @@ const Assemble = () => {
   };
 
   return (
-    <div>
-      <h1>Assemble API Call</h1>
-      <button onClick={assembleTokens} disabled={loading}>
-        {loading ? 'Fetching...' : 'Fetch Data'}
-      </button>
-      
-      {error && <div>Error: {error.message}</div>}
-      
-      {data && (
-        <div>
-          <h2>Assemble Results</h2>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      )}
+    <div className="flex items-center justify-center min-h-screen bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] text-white">
+      <div className="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-6">Assemble API Call</h1>
+        
+        <button
+          onClick={assembleTokens}
+          disabled={loading}
+          className={`w-full bg-blue-500 p-2 rounded text-white font-semibold ${
+            loading ? 'cursor-not-allowed opacity-50' : 'hover:bg-blue-600'
+          } transition-colors`}
+        >
+          {loading ? 'Fetching...' : 'Fetch Data'}
+        </button>
+
+        {error && (
+          <div className="mt-4 bg-red-600 p-3 rounded text-white text-sm">
+            Error: {error.message}
+          </div>
+        )}
+
+        {data && (
+          <div className="mt-6 bg-gray-700 p-4 rounded max-h-48 overflow-y-auto border border-gray-600 text-left">
+            <h2 className="text-md font-semibold mb-2">Assemble Results:</h2>
+            <pre className="whitespace-pre-wrap text-sm">{JSON.stringify(data, null, 2)}</pre>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
