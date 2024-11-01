@@ -31,7 +31,7 @@ function Navbar() {
                 Functions
                 </a>
                 <a
-                  href='/activate-id'
+                  href='/Stream-Layout'
                   className='block px-4 py-2 text-black hover:bg-gray-200'>
                Streams
                 </a>

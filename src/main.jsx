@@ -20,6 +20,9 @@ import RetrieveStream from './components/Streams/RetrieveStream.jsx'
 import NotificationById from './components/Streams/NotificationById.jsx'
 import PauseId from './components/Streams/PauseId.jsx'
 import ActivateId from './components/Streams/ActivateId.jsx'
+import TerminateId from './components/Streams/TerminateId.jsx'
+import DeleteId from './components/Streams/DeleteId.jsx'
+import StreamLayout from './components/Streams/StreamLayout.jsx'
 
 import {
   createBrowserRouter,
@@ -50,6 +53,9 @@ const router = createBrowserRouter(
       <Route path='/notification-id' element={<NotificationById/>}/>
       <Route path='/pause-id' element={<PauseId/>}/>
       <Route path='/activate-id' element={<ActivateId/>}/>
+      <Route path='/terminate-id' element={<TerminateId/>}/>
+      <Route path='/delete-id' element={<DeleteId/>}/>
+      <Route path='/Stream-Layout' element={<StreamLayout/>}/>
     </Route>
   )
 );
