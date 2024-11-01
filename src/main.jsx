@@ -16,6 +16,10 @@ import MultichainTransaction from './components/Functions/MultichainTransaction.
 import GasPrice from './components/Functions/GasPrice.jsx'
 import OdosLayout from './components/Odos/OdosLayout.jsx'
 import CreateStream from './components/Streams/CreateStream.jsx'
+import RetrieveStream from './components/Streams/RetrieveStream.jsx'
+import NotificationById from './components/Streams/NotificationById.jsx'
+import PauseId from './components/Streams/PauseId.jsx'
+import ActivateId from './components/Streams/ActivateId.jsx'
 
 import {
   createBrowserRouter,
@@ -42,6 +46,10 @@ const router = createBrowserRouter(
       <Route path='/whale-txn' element={<WhaleTransaction/>}/>
       <Route path='/odos-layout' element={<OdosLayout/>}/>
       <Route path='/create-stream' element={<CreateStream/>}/>
+      <Route path='/retrieve-stream' element={<RetrieveStream/>}/>
+      <Route path='/notification-id' element={<NotificationById/>}/>
+      <Route path='/pause-id' element={<PauseId/>}/>
+      <Route path='/activate-id' element={<ActivateId/>}/>
     </Route>
   )
 );
