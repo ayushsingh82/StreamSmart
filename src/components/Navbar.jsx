@@ -40,6 +40,11 @@ function Navbar() {
                 className='block px-4 py-2 text-black hover:bg-gray-200'>
              Odos
               </a>
+              <a
+              href='/avail'
+              className='block px-4 py-2 text-black hover:bg-gray-200'>
+           Avail
+            </a>
              
               </div>
             )}

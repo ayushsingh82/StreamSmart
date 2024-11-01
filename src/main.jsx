@@ -24,6 +24,7 @@ import TerminateId from './components/Streams/TerminateId.jsx'
 import DeleteId from './components/Streams/DeleteId.jsx'
 import StreamLayout from './components/Streams/StreamLayout.jsx'
 import FunctionLayout from './components/Functions/FunctionLayout.jsx'
+import AvailCalculator from './AvailCalculator.jsx'
 
 import {
   createBrowserRouter,
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
       <Route path='/delete-id' element={<DeleteId/>}/>
       <Route path='/streamlayout' element={<StreamLayout/>}/>
       <Route path='/functionlayout' element={<FunctionLayout/>}/>
+      <Route path='/avail' element={<AvailCalculator/>}/>
     </Route>
   )
 );
