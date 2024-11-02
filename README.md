@@ -9,7 +9,7 @@ StreamSmart is a comprehensive solution for blockchain data streaming and analyt
 - **Control Stream**: Easily **pause**, **activate**, or **terminate** your stream with a single click.
 - **Stream Data Fetching**: Retrieve stream data effortlessly by using Stream ID.
 
-### Blockchain Data Insights (QuickNode)
+### Blockchain Data Insights (QuickNode Functions)
 - **Block Metrics**: Analyze detailed block metrics, including transaction volume, confirmation times, and more.
 - **Gas Price Tracking**: Stay updated on the latest gas prices across supported chains.
 - **Multi-Chain Transaction Monitoring**: Track transactions across multiple chains seamlessly.
