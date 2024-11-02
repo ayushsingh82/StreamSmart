@@ -23,7 +23,7 @@ StreamSmart is a comprehensive solution for blockchain data streaming and analyt
 - **QuoteV2**: Enhanced quoting system for optimized transaction fee calculations and better route selection.
 - **V2Zap**: Integrated support for streamlined multi-chain and single-chain transactions, enabling users to execute transactions with reduced fees and optimized routes.
 
-### Fee Calculator
+### Avail DA Fee Calculator
 - **Fee Analysis & Charting**: Displays fee-related data in a graphical format, enabling users to make data-driven decisions based on real-time fee metrics.
 
 ## Installation
