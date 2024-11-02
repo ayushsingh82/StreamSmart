@@ -99,7 +99,7 @@ const Home = () => {
         >
           {/* Infinite Y-axis up and down movement for Quicknode Image */}
           <motion.img
-          src={`${baseURL}odos.png`} // Updated Quicknode Logo URL
+          src="/odos.png" // Updated Quicknode Logo URL
             alt="Quicknode Image"
             className="rounded-lg shadow-lg h-[100px] mb-4" // Added margin-bottom for spacing
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
@@ -112,7 +112,7 @@ const Home = () => {
           
           {/* Infinite Y-axis up and down movement for Odos Image */}
           <motion.img
-          src={`${baseURL}quicknode.png`} // Valid Odos logo URL
+          src="/quicknode.png"// Valid Odos logo URL
             alt="Odos Image"
             className="rounded-lg shadow-lg h-[100px]"
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
