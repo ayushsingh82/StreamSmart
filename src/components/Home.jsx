@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import odos from '../../public/odos.png'
 
 const Home = () => {
+
+  const baseURL =process.env.NODE_ENV === "production"? "https://quicknode.vercel.app/": "http://localhost:5173/";
+
   return (
     <section className="pt-0 pb-20 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip h-screen w-screen"> 
       <div className="container mx-auto px-4">
@@ -96,7 +99,7 @@ const Home = () => {
         >
           {/* Infinite Y-axis up and down movement for Quicknode Image */}
           <motion.img
-            src="../../public/odos.png" // Updated Quicknode Logo URL
+          src={`${baseURL}odos.png`} // Updated Quicknode Logo URL
             alt="Quicknode Image"
             className="rounded-lg shadow-lg h-[100px] mb-4" // Added margin-bottom for spacing
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
@@ -109,7 +112,7 @@ const Home = () => {
           
           {/* Infinite Y-axis up and down movement for Odos Image */}
           <motion.img
-            src="../../public/quicknode.png" // Valid Odos logo URL
+          src={`${baseURL}quicknode.png`} // Valid Odos logo URL
             alt="Odos Image"
             className="rounded-lg shadow-lg h-[100px]"
             animate={{ y: [-10, 10, -10] }}  // Moves 10px up and down
